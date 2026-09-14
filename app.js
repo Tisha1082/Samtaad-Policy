@@ -104,59 +104,147 @@ function initLanguage() {
 }
 
 /* --------------------------------------------------------------------------
-   3. Tabs Navigation (Privacy Policy vs Terms of Service)
+   3. Tabs & Navigation (Header Nav, Hero Tabs, Sidebar Filters & Hash Routing)
    -------------------------------------------------------------------------- */
-function initTabs() {
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const privacySection = document.getElementById('policy-content');
-  const termsSection = document.getElementById('terms-content');
+let currentActiveTab = 'privacy';
+let currentFilterMode = 'all';
 
-  function switchTab(targetTab) {
-    tabButtons.forEach(btn => {
+function initTabs() {
+  const privacyContent = document.getElementById('policy-content');
+  const termsContent = document.getElementById('terms-content');
+
+  // Header Nav & Hero tab buttons
+  const allTabBtns = document.querySelectorAll('.tab-btn, .nav-tab-btn[data-tab]');
+  const filterBtns = document.querySelectorAll('.s-filter-btn');
+
+  function switchTab(targetTab, updateFilter = false) {
+    currentActiveTab = targetTab;
+
+    // Sync all tab buttons (header and hero)
+    allTabBtns.forEach(btn => {
       const isTarget = btn.getAttribute('data-tab') === targetTab;
       btn.classList.toggle('active', isTarget);
       btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
     });
 
+    // Toggle Content Sections
     if (targetTab === 'terms') {
-      if (privacySection) privacySection.style.display = 'none';
-      if (termsSection) termsSection.style.display = 'block';
-      updateTOC('terms');
+      if (privacyContent) privacyContent.style.display = 'none';
+      if (termsContent) termsContent.style.display = 'block';
     } else {
-      if (privacySection) privacySection.style.display = 'block';
-      if (termsSection) termsSection.style.display = 'none';
-      updateTOC('privacy');
+      if (privacyContent) privacyContent.style.display = 'block';
+      if (termsContent) termsContent.style.display = 'none';
+    }
+
+    if (updateFilter) {
+      applySidebarFilter(targetTab);
     }
   }
 
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+  // Bind tab click events
+  allTabBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const tab = btn.getAttribute('data-tab');
       switchTab(tab);
       history.replaceState(null, '', `#${tab}`);
     });
   });
 
-  // Handle URL hash on load
-  const hash = window.location.hash.toLowerCase();
-  if (hash.includes('term')) {
-    switchTab('terms');
-  } else {
-    switchTab('privacy');
-  }
-}
+  // Bind Header "Data Deletion" shortcut
+  const dataDeletionLinks = document.querySelectorAll('[data-goto="data-deletion"], a[href="#data-deletion"]');
+  dataDeletionLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (currentActiveTab !== 'privacy') {
+        switchTab('privacy');
+      }
+      const targetEl = document.getElementById('data-deletion');
+      if (targetEl) {
+        setTimeout(() => {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      }
+    });
+  });
 
-function updateTOC(mode) {
-  const privacyLinks = document.querySelectorAll('.toc-link[data-section="privacy"]');
-  const termsLinks = document.querySelectorAll('.toc-link[data-section="terms"]');
+  // Bind Sidebar Filter Buttons (All / Privacy / Terms)
+  function applySidebarFilter(mode) {
+    currentFilterMode = mode;
+    filterBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-filter') === mode);
+    });
 
-  if (mode === 'terms') {
-    privacyLinks.forEach(el => el.parentElement.style.display = 'none');
-    termsLinks.forEach(el => el.parentElement.style.display = 'block');
-  } else {
-    privacyLinks.forEach(el => el.parentElement.style.display = 'block');
-    termsLinks.forEach(el => el.parentElement.style.display = 'none');
+    const privacyGroup = document.getElementById('toc-group-privacy');
+    const termsGroup = document.getElementById('toc-group-terms');
+
+    if (mode === 'all') {
+      if (privacyGroup) privacyGroup.style.display = 'block';
+      if (termsGroup) termsGroup.style.display = 'block';
+    } else if (mode === 'privacy') {
+      if (privacyGroup) privacyGroup.style.display = 'block';
+      if (termsGroup) termsGroup.style.display = 'none';
+    } else if (mode === 'terms') {
+      if (privacyGroup) privacyGroup.style.display = 'none';
+      if (termsGroup) termsGroup.style.display = 'block';
+    }
   }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.getAttribute('data-filter');
+      applySidebarFilter(mode);
+      if (mode === 'privacy' || mode === 'terms') {
+        switchTab(mode);
+        history.replaceState(null, '', `#${mode}`);
+      }
+    });
+  });
+
+  // Bind click on TOC Links to auto-switch tab if clicking opposite section
+  const allTocLinks = document.querySelectorAll('.toc-link');
+  allTocLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const sectionType = link.getAttribute('data-section');
+      const href = link.getAttribute('href');
+
+      if (sectionType && sectionType !== currentActiveTab) {
+        switchTab(sectionType);
+      }
+
+      if (href && href.startsWith('#')) {
+        const targetId = href.substring(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }, 60);
+        }
+      }
+    });
+  });
+
+  // Handle URL Hash on load & hashchange
+  function handleHash() {
+    const hash = window.location.hash.toLowerCase();
+    if (!hash) return;
+
+    if (hash.includes('term')) {
+      switchTab('terms');
+    } else {
+      switchTab('privacy');
+    }
+
+    const cleanHash = hash.replace('#', '');
+    const targetElement = document.getElementById(cleanHash);
+    if (targetElement) {
+      setTimeout(() => {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }
+
+  window.addEventListener('hashchange', handleHash);
+  handleHash();
 }
 
 /* --------------------------------------------------------------------------
@@ -179,34 +267,55 @@ function initScrollSpy() {
       }
     });
   }, {
-    rootMargin: '-20% 0px -70% 0px'
+    rootMargin: '-15% 0px -70% 0px'
   });
 
   sections.forEach(section => observer.observe(section));
 }
 
 /* --------------------------------------------------------------------------
-   5. Live Search & Highlight
+   5. Live Search Across All Sections
    -------------------------------------------------------------------------- */
 function initSearch() {
   const searchInput = document.getElementById('policySearch');
+  const privacyContent = document.getElementById('policy-content');
+  const termsContent = document.getElementById('terms-content');
+  const tocLinks = document.querySelectorAll('.toc-link');
+
   if (!searchInput) return;
 
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase().trim();
     const sections = document.querySelectorAll('.section-block');
 
-    sections.forEach(section => {
-      if (!query) {
-        section.style.display = '';
-        return;
-      }
+    if (!query) {
+      // Restore view based on currentActiveTab
+      if (privacyContent) privacyContent.style.display = currentActiveTab === 'privacy' ? 'block' : 'none';
+      if (termsContent) termsContent.style.display = currentActiveTab === 'terms' ? 'block' : 'none';
 
+      sections.forEach(sec => sec.style.display = '');
+      tocLinks.forEach(link => {
+        link.parentElement.style.display = '';
+        link.style.opacity = '';
+      });
+      return;
+    }
+
+    // Searching: Show both content containers so matches anywhere can be seen
+    if (privacyContent) privacyContent.style.display = 'block';
+    if (termsContent) termsContent.style.display = 'block';
+
+    sections.forEach(section => {
       const text = section.innerText.toLowerCase();
-      if (text.includes(query)) {
-        section.style.display = '';
-      } else {
-        section.style.display = 'none';
+      const id = section.getAttribute('id');
+      const matches = text.includes(query);
+      section.style.display = matches ? '' : 'none';
+
+      // Update corresponding TOC item
+      const matchingLink = document.querySelector(`.toc-link[href="#${id}"]`);
+      if (matchingLink) {
+        matchingLink.parentElement.style.display = matches ? '' : 'none';
+        matchingLink.style.opacity = matches ? '1' : '0.4';
       }
     });
   });

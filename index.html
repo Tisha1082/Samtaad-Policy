@@ -43,6 +43,25 @@
         </div>
       </a>
 
+      <!-- Header Navigation Tabs -->
+      <nav class="header-nav" role="tablist" aria-label="Main Navigation">
+        <button class="nav-tab-btn active" data-tab="privacy" role="tab" aria-selected="true">
+          <span class="nav-tab-icon">🔒</span>
+          <span class="lang-en">Privacy Policy</span>
+          <span class="lang-hi" style="display:none;">गोपनीयता नीति</span>
+        </button>
+        <button class="nav-tab-btn" data-tab="terms" role="tab" aria-selected="false">
+          <span class="nav-tab-icon">📜</span>
+          <span class="lang-en">Terms of Service</span>
+          <span class="lang-hi" style="display:none;">सेवा की शर्तें</span>
+        </button>
+        <a href="#data-deletion" class="nav-tab-btn nav-tab-link" data-goto="data-deletion">
+          <span class="nav-tab-icon">🗑️</span>
+          <span class="lang-en">Data Deletion</span>
+          <span class="lang-hi" style="display:none;">डेटा विलोपन</span>
+        </a>
+      </nav>
+
       <div class="header-actions">
         <!-- Language Switcher -->
         <button id="langToggle" class="btn-switch" aria-label="Change Language">
@@ -100,12 +119,12 @@
       <!-- Navigation Tabs -->
       <nav class="policy-tabs" role="tablist" aria-label="Policy Sections">
         <button class="tab-btn active" data-tab="privacy" role="tab" aria-selected="true">
-          <span class="lang-en">Privacy Policy</span>
-          <span class="lang-hi" style="display:none;">गोपनीयता नीति (Privacy)</span>
+          <span class="lang-en">🔒 Privacy Policy (9 Sections)</span>
+          <span class="lang-hi" style="display:none;">🔒 गोपनीयता नीति (9 खंड)</span>
         </button>
         <button class="tab-btn" data-tab="terms" role="tab" aria-selected="false">
-          <span class="lang-en">Terms of Service</span>
-          <span class="lang-hi" style="display:none;">सेवा की शर्तें (Terms)</span>
+          <span class="lang-en">📜 Terms of Service (5 Sections)</span>
+          <span class="lang-hi" style="display:none;">📜 सेवा की शर्तें (5 खंड)</span>
         </button>
       </nav>
     </div>
@@ -118,33 +137,64 @@
     
     <!-- STICKY TABLE OF CONTENTS SIDEBAR -->
     <aside class="sidebar" aria-label="Table of Contents">
-      <div class="search-wrap">
-        <span class="search-icon" aria-hidden="true">🔍</span>
-        <input type="search" id="policySearch" class="search-input" placeholder="Search policy...">
+      <!-- Quick Switcher Pills -->
+      <div class="sidebar-filter-tabs" role="tablist" aria-label="Filter Options">
+        <button class="s-filter-btn active" data-filter="all" title="Show all 14 options">
+          <span class="lang-en">All (14)</span>
+          <span class="lang-hi" style="display:none;">सभी (14)</span>
+        </button>
+        <button class="s-filter-btn" data-filter="privacy" title="Show Privacy options only">
+          <span class="lang-en">Privacy (9)</span>
+          <span class="lang-hi" style="display:none;">गोपनीयता (9)</span>
+        </button>
+        <button class="s-filter-btn" data-filter="terms" title="Show Terms options only">
+          <span class="lang-en">Terms (5)</span>
+          <span class="lang-hi" style="display:none;">शर्तें (5)</span>
+        </button>
       </div>
 
-      <div class="toc-title lang-en">Quick Navigation</div>
-      <div class="toc-title lang-hi" style="display:none;">त्वरित सूची</div>
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="search" id="policySearch" class="search-input" placeholder="Search all 14 options...">
+      </div>
 
-      <ul class="toc-list">
-        <!-- Privacy TOC Links -->
-        <li><a href="#intro" class="toc-link" data-section="privacy">1. Introduction & Overview</a></li>
-        <li><a href="#data-collection" class="toc-link" data-section="privacy">2. Data We Collect</a></li>
-        <li><a href="#data-usage" class="toc-link" data-section="privacy">3. How We Use Data</a></li>
-        <li><a href="#audio-storage" class="toc-link" data-section="privacy">4. Audio & Storage Usage</a></li>
-        <li><a href="#data-deletion" class="toc-link" data-section="privacy">5. Account & Data Deletion</a></li>
-        <li><a href="#third-party" class="toc-link" data-section="privacy">6. Third-Party Services</a></li>
-        <li><a href="#security" class="toc-link" data-section="privacy">7. Security & Retention</a></li>
-        <li><a href="#children" class="toc-link" data-section="privacy">8. Children's Privacy</a></li>
-        <li><a href="#contact" class="toc-link" data-section="privacy">9. Contact & Support</a></li>
+      <!-- TOC Group 1: Privacy Policy -->
+      <div class="toc-group" id="toc-group-privacy">
+        <div class="toc-group-header">
+          <span class="toc-group-tag">🔒</span>
+          <span class="toc-title lang-en">Privacy Policy</span>
+          <span class="toc-title lang-hi" style="display:none;">गोपनीयता नीति</span>
+          <span class="toc-badge">9</span>
+        </div>
+        <ul class="toc-list">
+          <li><a href="#intro" class="toc-link" data-section="privacy"><span class="toc-num">1</span><span class="toc-text">Introduction & Overview</span></a></li>
+          <li><a href="#data-collection" class="toc-link" data-section="privacy"><span class="toc-num">2</span><span class="toc-text">Data We Collect</span></a></li>
+          <li><a href="#data-usage" class="toc-link" data-section="privacy"><span class="toc-num">3</span><span class="toc-text">How We Use Data</span></a></li>
+          <li><a href="#audio-storage" class="toc-link" data-section="privacy"><span class="toc-num">4</span><span class="toc-text">Audio & Storage Usage</span></a></li>
+          <li><a href="#data-deletion" class="toc-link" data-section="privacy"><span class="toc-num">5</span><span class="toc-text">Account & Data Deletion</span></a></li>
+          <li><a href="#third-party" class="toc-link" data-section="privacy"><span class="toc-num">6</span><span class="toc-text">Third-Party Services</span></a></li>
+          <li><a href="#security" class="toc-link" data-section="privacy"><span class="toc-num">7</span><span class="toc-text">Security & Retention</span></a></li>
+          <li><a href="#children" class="toc-link" data-section="privacy"><span class="toc-num">8</span><span class="toc-text">Children's Privacy</span></a></li>
+          <li><a href="#contact" class="toc-link" data-section="privacy"><span class="toc-num">9</span><span class="toc-text">Contact & Support</span></a></li>
+        </ul>
+      </div>
 
-        <!-- Terms TOC Links -->
-        <li style="display:none;"><a href="#terms-acceptance" class="toc-link" data-section="terms">1. Acceptance of Terms</a></li>
-        <li style="display:none;"><a href="#sacred-content" class="toc-link" data-section="terms">2. Sacred Content Sanctity</a></li>
-        <li style="display:none;"><a href="#user-conduct" class="toc-link" data-section="terms">3. User Conduct & Guidelines</a></li>
-        <li style="display:none;"><a href="#disclaimer" class="toc-link" data-section="terms">4. Spiritual Disclaimer</a></li>
-        <li style="display:none;"><a href="#terms-changes" class="toc-link" data-section="terms">5. Modifications to Terms</a></li>
-      </ul>
+      <!-- TOC Group 2: Terms of Service -->
+      <div class="toc-group" id="toc-group-terms">
+        <div class="toc-group-header">
+          <span class="toc-group-tag">📜</span>
+          <span class="toc-title lang-en">Terms of Service</span>
+          <span class="toc-title lang-hi" style="display:none;">सेवा की शर्तें</span>
+          <span class="toc-badge">5</span>
+        </div>
+        <ul class="toc-list">
+          <li><a href="#terms-acceptance" class="toc-link" data-section="terms"><span class="toc-num">1</span><span class="toc-text">Acceptance of Terms</span></a></li>
+          <li><a href="#sacred-content" class="toc-link" data-section="terms"><span class="toc-num">2</span><span class="toc-text">Sacred Content Sanctity</span></a></li>
+          <li><a href="#user-conduct" class="toc-link" data-section="terms"><span class="toc-num">3</span><span class="toc-text">User Conduct & Guidelines</span></a></li>
+          <li><a href="#disclaimer" class="toc-link" data-section="terms"><span class="toc-num">4</span><span class="toc-text">Spiritual Disclaimer</span></a></li>
+          <li><a href="#terms-changes" class="toc-link" data-section="terms"><span class="toc-num">5</span><span class="toc-text">Modifications to Terms</span></a></li>
+        </ul>
+      </div>
     </aside>
 
     <!-- CONTENT BODY -->
