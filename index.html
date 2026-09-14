@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy & Terms of Service | Samtawad (समतावाद)</title>
+  <meta name="description" content="Official Privacy Policy, User Data Safety, and Terms of Service for Samtawad (समतावाद) Mobile Application & Web Platform.">
+  <meta name="keywords" content="Samtawad, समतावाद, Privacy Policy, Terms of Service, User Data Deletion, Spiritual App, Simran, Satsang">
+  <meta name="author" content="Samtawad Trust">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy Policy & Terms | Samtawad (समतावाद)">
+  <meta property="og:description" content="Official Privacy Policy and Data Deletion Compliance for Samtawad Mobile Application and Platform.">
+  <meta property="og:image" content="logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <!-- Google Fonts: Alegreya Sans & Gotu for pristine typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=Gotu&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#" class="brand-link" aria-label="Samtawad Home">
+        <div class="brand-logo-wrap">
+          <img src="logo.png" alt="Samtawad Logo" width="52" height="52">
+        </div>
+        <div class="brand-info">
+          <span class="brand-title">समतावाद · Samtawad</span>
+          <span class="brand-tagline lang-en">Spiritual Literature & Meditation Platform</span>
+          <span class="brand-tagline lang-hi" style="display:none;">आध्यात्मिक साहित्य एवं सिमरन साधना मंच</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <button id="langToggle" class="btn-switch" aria-label="Change Language">
+          <span aria-hidden="true">🌐</span>
+          <span id="langLabel">हिन्दी</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="btn-switch" aria-label="Toggle Dark Mode">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">Dark</span>
+        </button>
+
+        <!-- PDF Export -->
+        <button class="btn-switch btn-pdf" onclick="window.printPolicy()" aria-label="Save or Print PDF" title="Save as PDF">
+          <span aria-hidden="true">📄</span>
+          <span>PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO BANNER
+       ======================================================================== -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-badge-wrap">
+        <span class="badge badge-saffron">
+          <span class="lang-en">Official Legal Document</span>
+          <span class="lang-hi" style="display:none;">आधिकारिक कानूनी दस्तावेज</span>
+        </span>
+        <span class="badge badge-verified">
+          <span class="lang-en">✓ Google Play & App Store Compliant</span>
+          <span class="lang-hi" style="display:none;">✓ गूगल प्ले एवं ऐप स्टोर संगत</span>
+        </span>
+      </div>
+
+      <h1 class="hero-title lang-en">Privacy Policy & Terms of Service</h1>
+      <h1 class="hero-title lang-hi" style="display:none;">गोपनीयता नीति एवं सेवा की शर्तें</h1>
+
+      <p class="hero-subtitle lang-en">
+        Welcome to <strong>Samtawad (समतावाद)</strong>. We deeply respect your privacy and are committed to protecting your personal data while you engage in spiritual learning, Granth reading, Simran meditation, and Satsang audio.
+      </p>
+      <p class="hero-subtitle lang-hi" style="display:none;">
+        <strong>समतावाद (Samtawad)</strong> में आपका स्वागत है। हम आपकी निजता का पूर्ण सम्मान करते हैं और आध्यात्मिक ज्ञान, ग्रंथ अध्ययन, सिमरन साधना व सत्संग श्रवण के दौरान आपके व्यक्तिगत डेटा की सुरक्षा के लिए प्रतिबद्ध हैं।
+      </p>
+
+      <div class="hero-meta">
+        <span><strong>Last Updated:</strong> September 14, 2026</span>
+        <span><strong>App Identifier:</strong> com.samtawad.app</span>
+        <span><strong>Applicable For:</strong> Android, iOS & Web PWA</span>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="policy-tabs" role="tablist" aria-label="Policy Sections">
+        <button class="tab-btn active" data-tab="privacy" role="tab" aria-selected="true">
+          <span class="lang-en">Privacy Policy</span>
+          <span class="lang-hi" style="display:none;">गोपनीयता नीति (Privacy)</span>
+        </button>
+        <button class="tab-btn" data-tab="terms" role="tab" aria-selected="false">
+          <span class="lang-en">Terms of Service</span>
+          <span class="lang-hi" style="display:none;">सेवा की शर्तें (Terms)</span>
+        </button>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MAIN CONTENT LAYOUT
+       ======================================================================== -->
+  <main class="main-layout">
+    
+    <!-- STICKY TABLE OF CONTENTS SIDEBAR -->
+    <aside class="sidebar" aria-label="Table of Contents">
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="search" id="policySearch" class="search-input" placeholder="Search policy...">
+      </div>
+
+      <div class="toc-title lang-en">Quick Navigation</div>
+      <div class="toc-title lang-hi" style="display:none;">त्वरित सूची</div>
+
+      <ul class="toc-list">
+        <!-- Privacy TOC Links -->
+        <li><a href="#intro" class="toc-link" data-section="privacy">1. Introduction & Overview</a></li>
+        <li><a href="#data-collection" class="toc-link" data-section="privacy">2. Data We Collect</a></li>
+        <li><a href="#data-usage" class="toc-link" data-section="privacy">3. How We Use Data</a></li>
+        <li><a href="#audio-storage" class="toc-link" data-section="privacy">4. Audio & Storage Usage</a></li>
+        <li><a href="#data-deletion" class="toc-link" data-section="privacy">5. Account & Data Deletion</a></li>
+        <li><a href="#third-party" class="toc-link" data-section="privacy">6. Third-Party Services</a></li>
+        <li><a href="#security" class="toc-link" data-section="privacy">7. Security & Retention</a></li>
+        <li><a href="#children" class="toc-link" data-section="privacy">8. Children's Privacy</a></li>
+        <li><a href="#contact" class="toc-link" data-section="privacy">9. Contact & Support</a></li>
+
+        <!-- Terms TOC Links -->
+        <li style="display:none;"><a href="#terms-acceptance" class="toc-link" data-section="terms">1. Acceptance of Terms</a></li>
+        <li style="display:none;"><a href="#sacred-content" class="toc-link" data-section="terms">2. Sacred Content Sanctity</a></li>
+        <li style="display:none;"><a href="#user-conduct" class="toc-link" data-section="terms">3. User Conduct & Guidelines</a></li>
+        <li style="display:none;"><a href="#disclaimer" class="toc-link" data-section="terms">4. Spiritual Disclaimer</a></li>
+        <li style="display:none;"><a href="#terms-changes" class="toc-link" data-section="terms">5. Modifications to Terms</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTENT BODY -->
+    <article class="content-article">
+
+      <!-- ====================================================================
+           SECTION 1: PRIVACY POLICY
+           ==================================================================== -->
+      <div id="policy-content">
+
+        <!-- 1. Introduction -->
+        <section id="intro" class="section-block">
+          <div class="section-header">
+            <span class="section-number">1</span>
+            <h2 class="section-title lang-en">Introduction & Scope</h2>
+            <h2 class="section-title lang-hi" style="display:none;">परिचय एवं कार्यक्षेत्र</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>
+              This Privacy Policy applies to the <strong>Samtawad (समतावाद)</strong> mobile application (available on Google Play Store and Apple App Store) and its companion web platform. Samtawad is dedicated to spiritual development, offering access to revered literature (such as <em>Granth Shri Samta Vilas</em> and <em>Samta Prakash</em>), audio Satsang, Vani playlists, and Simran Sadhana meditation.
+            </p>
+            <p>
+              We prioritize data minimization: we only collect the minimum information strictly necessary to authenticate your account, synchronize your bookmarks, personal notes, and meditation streaks, and deliver uninterrupted spiritual audio playback.
+            </p>
+          </div>
+
+          <div class="lang-hi" style="display:none;">
+            <p>
+              यह गोपनीयता नीति <strong>समतावाद (Samtawad)</strong> मोबाइल एप्लिकेशन (गूगल प्ले स्टोर एवं ऐपल ऐप स्टोर पर उपलब्ध) तथा इसके वेब मंच पर लागू होती है। समतावाद मंच आध्यात्मिक कल्याण, पवित्र ग्रंथों (जैसे <em>ग्रंथ श्री समता विलास</em> एवं <em>समता प्रकाश</em>), सत्संग ऑडियो, वाणी प्लेलिस्ट और सिमरन साधना ध्यान के लिए समर्पित है।
+            </p>
+            <p>
+              हम न्यूनतम डेटा संग्रह (Data Minimization) के सिद्धांत का पालन करते हैं। हम केवल वही आवश्यक जानकारी एकत्र करते हैं जो आपके खाते के प्रमाणीकरण, आपके बुकमार्क, व्यक्तिगत नोट्स, ध्यान रिकॉर्ड को सुरक्षित रखने तथा निर्बाध ऑडियो प्रसारण के लिए आवश्यक है।
+            </p>
+          </div>
+
+          <div class="callout callout-saffron">
+            <div class="callout-title">
+              <span>🕊️</span>
+              <span class="lang-en">Non-Commercial Commitment</span>
+              <span class="lang-hi" style="display:none;">गैर-व्यावसायिक संकल्प</span>
+            </div>
+            <p class="lang-en">
+              Samtawad does <strong>NOT</strong> sell, rent, monetize, or trade your personal data with any third-party advertisers or data brokers. The platform exists purely for spiritual and devotional purposes.
+            </p>
+            <p class="lang-hi" style="display:none;">
+              समतावाद किसी भी विज्ञापनदाता या तीसरे पक्ष को आपका व्यक्तिगत डेटा <strong>नहीं</strong> बेचता, किराए पर नहीं देता और न ही इसका व्यावसायिक उपयोग करता है। यह मंच पूर्णतः आध्यात्मिक और धार्मिक साधना के लिए है।
+            </p>
+          </div>
+        </section>
+
+        <!-- 2. Data We Collect -->
+        <section id="data-collection" class="section-block">
+          <div class="section-header">
+            <span class="section-number">2</span>
+            <h2 class="section-title lang-en">Information & Data Collection</h2>
+            <h2 class="section-title lang-hi" style="display:none;">डेटा संग्रहण एवं जानकारी</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>Depending on how you interact with Samtawad, we may collect the following categories of information:</p>
+          </div>
+          <div class="lang-hi" style="display:none;">
+            <p>समतावाद ऐप के उपयोग के अनुसार हम निम्नलिखित श्रेणियों की जानकारी एकत्र कर सकते हैं:</p>
+          </div>
+
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th class="lang-en">Category</th>
+                  <th class="lang-hi" style="display:none;">श्रेणी</th>
+                  <th class="lang-en">Specific Data Points</th>
+                  <th class="lang-hi" style="display:none;">डेटा विवरण</th>
+                  <th class="lang-en">Purpose & Storage</th>
+                  <th class="lang-hi" style="display:none;">उद्देश्य एवं संग्रहण</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Account & Identity</strong></td>
+                  <td>Name, Email Address, optional Phone Number (if registered for Namavali)</td>
+                  <td>User authentication via <strong>Google Firebase Auth</strong>. Ensures your profile and access remain secure across devices.</td>
+                </tr>
+                <tr>
+                  <td><strong>Spiritual Preferences & Notes</strong></td>
+                  <td>Saved bookmarks, chapter reading progress, personal reflections/notes, Simran timer logs</td>
+                  <td>Stored securely in <strong>Cloud Firestore</strong> so your reading position and meditation records are synchronized.</td>
+                </tr>
+                <tr>
+                  <td><strong>Device & Diagnostic Data</strong></td>
+                  <td>Device model, Operating System version, Crash logs, App performance metrics</td>
+                  <td>Collected via <strong>Firebase Crashlytics</strong> to diagnose application bugs and ensure high reliability during prayer/simran.</td>
+                </tr>
+                <tr>
+                  <td><strong>Push Notification Tokens</strong></td>
+                  <td>Firebase Cloud Messaging (FCM) registration token</td>
+                  <td>To deliver scheduled daily quotes (आज का ज्ञान), Simran reminders, and Ashram event alerts if enabled.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 3. How We Use Data -->
+        <section id="data-usage" class="section-block">
+          <div class="section-header">
+            <span class="section-number">3</span>
+            <h2 class="section-title lang-en">How We Use Your Information</h2>
+            <h2 class="section-title lang-hi" style="display:none;">डेटा का उपयोग कैसे किया जाता है</h2>
+          </div>
+
+          <div class="lang-en">
+            <ul>
+              <li><strong>To authenticate and manage your account:</strong> Verifying identity and maintaining login sessions securely.</li>
+              <li><strong>To synchronize sacred reading progress:</strong> Saving your current page in EPUB/PDF scriptures and your Simran mala counts.</li>
+              <li><strong>To provide continuous spiritual audio:</strong> Managing playlists, resume playback timestamps, and offline cached files.</li>
+              <li><strong>To transmit important spiritual updates:</strong> Sending devotional notifications, daily quotes, and ashram gathering alerts (with your permission).</li>
+              <li><strong>To ensure app stability and prevent crashes:</strong> Analyzing diagnostics to optimize memory and battery usage during background audio playback.</li>
+            </ul>
+          </div>
+
+          <div class="lang-hi" style="display:none;">
+            <ul>
+              <li><strong>खाता प्रबंधन एवं प्रमाणीकरण:</strong> पहचान सत्यापित करना और सुरक्षित लॉगिन सत्र बनाए रखना।</li>
+              <li><strong>अध्ययन और सिमरन की निरंतरता:</strong> ग्रंथों में आपके पृष्ठ, बुकमार्क, नोट्स और सिमरन माला काउंट को सुरक्षित रखना।</li>
+              <li><strong>अविराम ऑडियो सत्संग:</strong> वाणी और भजनों की प्लेलिस्ट, अंतिम सुने गए समय को याद रखना तथा ऑफ़लाइन कैशिंग।</li>
+              <li><strong>दैनिक आध्यात्मिक संदेश:</strong> दैनिक ज्ञान, सत्संग सूचनाएं और सिमरन स्मरण पत्र (आपकी अनुमति से)।</li>
+              <li><strong>ऐप स्थिरता और बग निवारण:</strong> ऐप क्रैश की जांच करना तथा पृष्ठभूमि ऑडियो के दौरान बैटरी दक्षता सुनिश्चित करना।</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 4. Audio & Storage Usage -->
+        <section id="audio-storage" class="section-block">
+          <div class="section-header">
+            <span class="section-number">4</span>
+            <h2 class="section-title lang-en">Audio & Storage Usage (Permissions)</h2>
+            <h2 class="section-title lang-hi" style="display:none;">ऑडियो एवं स्टोरेज अनुमतियाँ</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>To provide a seamless spiritual experience, the Samtawad app utilizes specific system-level capabilities:</p>
+            <ul>
+              <li><strong>Foreground Service & Background Audio:</strong> The app utilizes audio playback services (via <code>just_audio</code> and background audio engines) so you can listen to holy Vani, discourses, and Simran chimes even when your phone screen is locked or while multitasking.</li>
+              <li><strong>Local Storage / File Caching:</strong> When you read scriptures (EPUB / PDF) or listen to frequently played tracks, the app saves temporary cache files locally on your device to enable offline reading and save your cellular data bandwidth.</li>
+              <li><strong>Notification Permissions:</strong> Requested strictly for Simran reminders and daily spiritual quotes. You can revoke this permission anytime via device settings.</li>
+            </ul>
+          </div>
+
+          <div class="lang-hi" style="display:none;">
+            <p>उत्तम आध्यात्मिक अनुभव प्रदान करने के लिए समतावाद ऐप कुछ विशेष सिस्टम अनुमतियों का उपयोग करता है:</p>
+            <ul>
+              <li><strong>बैकग्राउंड ऑडियो सर्विस (Foreground Service):</strong> वाणी, सत्संग और सिमरन धुन को स्क्रीन लॉक होने पर या अन्य कार्य करते समय भी बजाते रहने के लिए यह अनुमति आवश्यक है।</li>
+              <li><strong>लोकल स्टोरेज / कैशिंग (Storage):</strong> पवित्र ग्रंथों (EPUB / PDF) और वाणी को ऑफ़लाइन पढ़ने व सुनने के लिए आपके डिवाइस में अस्थायी रूप से सहेजा जाता है, ताकि आपका इंटरनेट डेटा बच सके।</li>
+              <li><strong>नोटिफ़िकेशन अनुमति:</strong> केवल सिमरन समय और दैनिक ज्ञान के लिए। आप इसे कभी भी फोन की सेटिंग्स से बंद कर सकते हैं।</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 5. User Account & Data Deletion (Play Store & App Store Mandatory) -->
+        <section id="data-deletion" class="section-block">
+          <div class="section-header">
+            <span class="section-number">5</span>
+            <h2 class="section-title lang-en">User Account & Data Deletion Policy</h2>
+            <h2 class="section-title lang-hi" style="display:none;">खाता एवं डेटा हटाने की नीति (डेटा डिलीशन)</h2>
+          </div>
+
+          <div class="callout callout-warning">
+            <div class="callout-title">
+              <span>⚠️</span>
+              <span class="lang-en">Google Play & Apple App Store Compliance Notice</span>
+              <span class="lang-hi" style="display:none;">गूगल प्ले एवं ऐपल स्टोर अनिवार्य नियम</span>
+            </div>
+            <p class="lang-en">
+              In accordance with Google Play's Data Safety Policy and Apple's App Store Guidelines, users have the absolute right to request the permanent deletion of their account and all personal data at any time.
+            </p>
+            <p class="lang-hi" style="display:none;">
+              गूगल प्ले और ऐपल स्टोर के नियमों के अनुसार प्रत्येक उपयोगकर्ता को किसी भी समय अपना खाता और समस्त व्यक्तिगत डेटा स्थायी रूप से हटाने (डिलीट करने) का पूर्ण अधिकार है।
+            </p>
+          </div>
+
+          <div class="deletion-box">
+            <h4 class="lang-en">How to Request Permanent Account and Data Deletion</h4>
+            <h4 class="lang-hi" style="display:none;">खाता और डेटा स्थायी रूप से कैसे हटाएं?</h4>
+
+            <div class="lang-en">
+              <p>You can request complete deletion of your account and personal records through either of the following methods:</p>
+              <ol class="deletion-steps">
+                <li><strong>Method 1 (In-App):</strong> Open Samtawad App → Go to <em>Profile</em> → Select <em>Edit Profile / Account Settings</em> → Tap <strong>"Delete My Account"</strong> and confirm.</li>
+                <li><strong>Method 2 (Direct Email / Web Request):</strong> Click the button below to submit a verified deletion request. You may also email us directly at <a href="mailto:support@dohassist.com">support@dohassist.com</a> with the subject <em>"Account Deletion Request"</em> from your registered email address.</li>
+              </ol>
+              <p><strong>What Data is Deleted:</strong> Your login credentials, user ID, profile name, bookmarks, reading highlights, notes, and Simran session logs will be permanently erased from Google Firebase Authentication and Cloud Firestore within <strong>30 days</strong> of verification.</p>
+              <p><strong>What Data is Retained:</strong> No personal or identifiable data is retained. Only anonymized aggregated app usage logs (if required for server security) may be kept.</p>
+            </div>
+
+            <div class="lang-hi" style="display:none;">
+              <p>आप निम्नलिखित दो तरीकों में से किसी से भी अपना खाता व डेटा डिलीट करवा सकते हैं:</p>
+              <ol class="deletion-steps">
+                <li><strong>विधि 1 (ऐप के भीतर):</strong> समतावाद ऐप खोलें → <em>प्रोफ़ाइल (Profile)</em> पर जाएँ → <em>खाता सेटिंग्स</em> में जाएँ → <strong>"Delete My Account"</strong> पर क्लिक कर पुष्टि करें।</li>
+                <li><strong>विधि 2 (ईमेल द्वारा सीधे अनुरोध):</strong> नीचे दिए गए बटन पर क्लिक करें अथवा अपने पंजीकृत ईमेल से <a href="mailto:support@dohassist.com">support@dohassist.com</a> पर <em>"Account Deletion Request"</em> विषय के साथ ईमेल भेजें।</li>
+              </ol>
+              <p><strong>कौन सा डेटा मिटाया जाएगा:</strong> आपका लॉगिन क्रेडेंशियल, यूजर आईडी, नाम, बुकमार्क, व्यक्तिगत नोट्स और सिमरन रिकॉर्ड अनुरोध सत्यापन के <strong>30 दिनों के भीतर</strong> हमेशा के लिए मिटा दिए जाएंगे।</p>
+              <p><strong>क्या डेटा रखा जाता है:</strong> कोई भी व्यक्तिगत पहचान योग्य जानकारी सुरक्षित नहीं रखी जाती।</p>
+            </div>
+
+            <div class="deletion-actions">
+              <a href="#" id="openDeletionEmailBtn" class="btn-icon btn-primary">
+                <span>🗑️</span>
+                <span class="lang-en">Request Account Deletion via Email</span>
+                <span class="lang-hi" style="display:none;">ईमेल द्वारा डेटा डिलीशन का अनुरोध करें</span>
+              </a>
+              <span style="font-size:14px; color:var(--text-muted);">
+                <span class="lang-en">(Automated template will open in your mail app)</span>
+                <span class="lang-hi" style="display:none;">(आपके ईमेल ऐप में तैयार फॉर्म खुलेगा)</span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Third-Party Services -->
+        <section id="third-party" class="section-block">
+          <div class="section-header">
+            <span class="section-number">6</span>
+            <h2 class="section-title lang-en">Third-Party Service Providers</h2>
+            <h2 class="section-title lang-hi" style="display:none;">तृतीय-पक्ष सेवा प्रदाता</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>To operate our application infrastructure reliably, we work with industry-standard, secure infrastructure providers:</p>
+            <ul>
+              <li><strong>Google Firebase:</strong> Used for secure authentication, real-time database (Firestore), Cloud Storage for spiritual audio files, and crash diagnostics. Governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
+              <li><strong>Railway / Supabase API:</strong> Used for synchronizing public content sections, chapter lists, and holy texts.</li>
+              <li><strong>Apple App Store & Google Play Services:</strong> Used for distribution, automatic updates, and system integrity verification.</li>
+            </ul>
+          </div>
+
+          <div class="lang-hi" style="display:none;">
+            <p>ऐप के सुचारु संचालन के लिए हम सुरक्षित एवं प्रमाणित बुनियादी ढांचा प्रदाताओं का उपयोग करते हैं:</p>
+            <ul>
+              <li><strong>गूगल फायरबेस (Google Firebase):</strong> सुरक्षित लॉगिन, फायरस्टोर डेटाबेस, क्लाउड स्टोरेज और क्रैश विश्लेषण के लिए। यह <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google की गोपनीयता नीति</a> के अधीन है।</li>
+              <li><strong>सुपाबेस / रेलवे API:</strong> सार्वजनिक ग्रंथ अध्यायों और साहित्य की सूची प्राप्त करने के लिए।</li>
+              <li><strong>गूगल प्ले एवं ऐपल स्टोर:</strong> ऐप वितरण और सुरक्षित अपडेट प्रदान करने के लिए।</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 7. Security & Retention -->
+        <section id="security" class="section-block">
+          <div class="section-header">
+            <span class="section-number">7</span>
+            <h2 class="section-title lang-en">Data Security & Retention</h2>
+            <h2 class="section-title lang-hi" style="display:none;">डेटा सुरक्षा एवं संरक्षण</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>
+              We implement industry-standard administrative, technical, and physical safeguards to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
+            </p>
+            <ul>
+              <li>All communications between your device and our servers are encrypted using modern Transport Layer Security (<strong>HTTPS / TLS 1.3</strong>).</li>
+              <li>User passwords are encrypted and hashed via Google Firebase Authentication and are never visible to anyone, including app administrators.</li>
+              <li>We retain your account data only as long as your account remains active or until you submit a deletion request.</li>
+            </ul>
+          </div>
+
+          <div class="lang-hi" style="display:none;">
+            <p>
+              हम आपके डेटा को अनधिकृत पहुंच, बदलाव या नष्ट होने से बचाने के लिए तकनीकी और प्रशासनिक सुरक्षा मानकों का पालन करते हैं।
+            </p>
+            <ul>
+              <li>आपके डिवाइस और सर्वर के बीच सारा डेटा आधुनिक <strong>HTTPS / TLS 1.3</strong> एन्क्रिप्शन द्वारा सुरक्षित रहता है।</li>
+              <li>पासवर्ड गूगल फायरबेस द्वारा सुरक्षित रूप से एन्क्रिप्टेड होते हैं, जिन्हें कोई भी (एडमिन भी) नहीं देख सकता।</li>
+              <li>डेटा तब तक ही रखा जाता है जब तक आपका खाता सक्रिय है अथवा जब तक आप इसे हटाने का अनुरोध नहीं करते।</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 8. Children's Privacy -->
+        <section id="children" class="section-block">
+          <div class="section-header">
+            <span class="section-number">8</span>
+            <h2 class="section-title lang-en">Children's Privacy (COPPA Compliance)</h2>
+            <h2 class="section-title lang-hi" style="display:none;">बच्चों की निजता (COPPA)</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>
+              Samtawad provides spiritual and philosophical content suitable for general audiences of all ages. However, we do not knowingly collect or solicit personal identifiable information from children under the age of 13. If a parent or guardian becomes aware that their child has provided personal information without consent, please contact us immediately at <a href="mailto:support@dohassist.com">support@dohassist.com</a>, and we will delete such data promptly.
+            </p>
+          </div>
+
+          <div class="lang-hi" style="display:none;">
+            <p>
+              समतावाद सभी आयु वर्ग के लिए उपयुक्त आध्यात्मिक साहित्य प्रदान करता है। तथापि, हम जानबूझकर 13 वर्ष से कम आयु के बच्चों से कोई व्यक्तिगत जानकारी एकत्र नहीं करते। यदि किसी अभिभावक को ज्ञात हो कि उनके बच्चे ने अनुमति के बिना व्यक्तिगत डेटा साझा किया है, तो कृपया तुरंत <a href="mailto:support@dohassist.com">support@dohassist.com</a> पर संपर्क करें, हम उस डेटा को तत्काल हटा देंगे।
+            </p>
+          </div>
+        </section>
+
+        <!-- 9. Contact & Support -->
+        <section id="contact" class="section-block">
+          <div class="section-header">
+            <span class="section-number">9</span>
+            <h2 class="section-title lang-en">Contact Information & Grievances</h2>
+            <h2 class="section-title lang-hi" style="display:none;">संपर्क एवं शिकायत निवारण</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>
+              If you have any questions, concerns, feedback, or grievance regarding this Privacy Policy or your personal information, please reach out to our dedicated support team:
+            </p>
+          </div>
+          <div class="lang-hi" style="display:none;">
+            <p>
+              यदि इस गोपनीयता नीति अथवा आपके व्यक्तिगत डेटा से संबंधित कोई भी प्रश्न या शिकायत हो, तो कृपया हमारी सहायता टीम से संपर्क करें:
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <span class="contact-card-icon">📧</span>
+              <span class="contact-card-title lang-en">Official Support Email</span>
+              <span class="contact-card-title lang-hi" style="display:none;">आधिकारिक सहायता ईमेल</span>
+              <a href="mailto:support@dohassist.com" class="contact-card-value">support@dohassist.com</a>
+            </div>
+            <div class="contact-card">
+              <span class="contact-card-icon">🏛️</span>
+              <span class="contact-card-title lang-en">Organization / Trust</span>
+              <span class="contact-card-title lang-hi" style="display:none;">संस्था / आश्रम</span>
+              <span style="font-weight:600; color:var(--text-ink);">Shri Samtawad Mission</span>
+            </div>
+            <div class="contact-card">
+              <span class="contact-card-icon">⏱️</span>
+              <span class="contact-card-title lang-en">Response Time</span>
+              <span class="contact-card-title lang-hi" style="display:none;">प्रतिक्रिया समय</span>
+              <span style="font-weight:600; color:var(--text-ink);">Within 48 Business Hours</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ====================================================================
+           SECTION 2: TERMS OF SERVICE (TAB)
+           ==================================================================== -->
+      <div id="terms-content" style="display:none;">
+
+        <!-- 1. Acceptance -->
+        <section id="terms-acceptance" class="section-block">
+          <div class="section-header">
+            <span class="section-number">1</span>
+            <h2 class="section-title lang-en">Acceptance of Terms</h2>
+            <h2 class="section-title lang-hi" style="display:none;">नियमों की स्वीकृति</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>
+              By downloading, installing, accessing, or utilizing the <strong>Samtawad (समतावाद)</strong> mobile application or website, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you must refrain from using the platform.
+            </p>
+          </div>
+          <div class="lang-hi" style="display:none;">
+            <p>
+              <strong>समतावाद (Samtawad)</strong> ऐप अथवा वेबसाइट का उपयोग या डाउनलोड करके, आप इन नियमों व शर्तों से बंधे रहने की सहमति देते हैं। यदि आप इन शर्तों से असहमत हैं, तो कृपया ऐप का उपयोग न करें।
+            </p>
+          </div>
+        </section>
+
+        <!-- 2. Sacred Content Sanctity -->
+        <section id="sacred-content" class="section-block">
+          <div class="section-header">
+            <span class="section-number">2</span>
+            <h2 class="section-title lang-en">Sanctity of Sacred Content & Intellectual Property</h2>
+            <h2 class="section-title lang-hi" style="display:none;">पवित्र साहित्य की गरिमा एवं सर्वाधिकार</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>
+              The sacred scriptures presented in this app — including <em>Granth Shri Samta Vilas</em>, <em>Samta Prakash</em>, Vani recordings, Gurukalin discourses, and divine prayers — are presented <strong>101% verbatim</strong> in honor of Gurudev's eternal teachings.
+            </p>
+            <ul>
+              <li><strong>Personal & Non-Commercial Use:</strong> All texts, audio files, and imagery are provided exclusively for your personal, spiritual, and devotional practice.</li>
+              <li><strong>No Unauthorized Redistribution:</strong> Users are strictly prohibited from altering, re-selling, redistributing, or commercializing any text, audio, or recordings extracted from this app.</li>
+            </ul>
+          </div>
+
+          <div class="lang-hi" style="display:none;">
+            <p>
+              ऐप में प्रस्तुत पवित्र साहित्य — जैसे <em>ग्रंथ श्री समता विलास</em>, <em>समता प्रकाश</em>, वाणी संग्रह एवं गुरुवचनों को गुरुदेव की पावन शिक्षाओं के अनुसार <strong>पूर्णतः मूल रूप (101% Verbatim)</strong> में प्रस्तुत किया गया है।
+            </p>
+            <ul>
+              <li><strong>निजी एवं आध्यात्मिक उपयोग:</strong> समस्त ग्रंथ, वाणी और ऑडियो केवल आपके व्यक्तिगत ध्यान, अध्ययन और साधना के लिए हैं।</li>
+              <li><strong>व्यावसायिक प्रतिबंध:</strong> ऐप से किसी भी सामग्री को बदलना, बेचना या व्यावसायिक लाभ के लिए पुनर्वितरित करना पूर्णतः वर्जित है।</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 3. User Conduct -->
+        <section id="user-conduct" class="section-block">
+          <div class="section-header">
+            <span class="section-number">3</span>
+            <h2 class="section-title lang-en">User Conduct & Guidelines</h2>
+            <h2 class="section-title lang-hi" style="display:none;">उपयोगकर्ता आचरण एवं दिशानिर्देश</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>As a devotee and user of the Samtawad platform, you agree:</p>
+            <ul>
+              <li>Not to misuse the support chat or question-and-answer features to transmit abusive, defamatory, or unlawful content.</li>
+              <li>Not to attempt reverse-engineering, decompiling, or interfering with the normal functioning of the mobile app or server APIs.</li>
+              <li>To maintain the confidentiality of your account credentials.</li>
+            </ul>
+          </div>
+
+          <div class="lang-hi" style="display:none;">
+            <p>समतावाद मंच के एक साधक/उपयोगकर्ता के रूप में आप सहमत हैं:</p>
+            <ul>
+              <li>सपोर्ट चैट अथवा प्रश्नोत्तर सुविधा में किसी भी प्रकार की अनुचित, अमर्यादित अथवा आपत्तिजनक सामग्री न भेजें।</li>
+              <li>ऐप या इसके सर्वर को बाधित करने अथवा रिवर्स-इंजीनियर करने का प्रयास न करें।</li>
+              <li>अपने लॉगिन क्रेडेंशियल को सुरक्षित रखें।</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 4. Disclaimer -->
+        <section id="disclaimer" class="section-block">
+          <div class="section-header">
+            <span class="section-number">4</span>
+            <h2 class="section-title lang-en">Spiritual Disclaimer & Limitation of Liability</h2>
+            <h2 class="section-title lang-hi" style="display:none;">आध्यात्मिक अस्वीकरण एवं दायित्व सीमा</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>
+              The Simran timer, meditation counters, and spiritual literature are intended as devotional aids. While we strive to provide 100% uptime and uninterrupted audio playback, the platform is provided on an "as-is" and "as-available" basis without warranties of any kind.
+            </p>
+          </div>
+          <div class="lang-hi" style="display:none;">
+            <p>
+              सिमरन टाइमर, ध्यान काउंटर और आध्यात्मिक ग्रंथ साधना में सहायता के लिए प्रदान किए गए हैं। हम 100% उपलब्धता का पूरा प्रयास करते हैं, फिर भी यह मंच "जैसा है" (As-Is) आधार पर उपलब्ध कराया जाता है।
+            </p>
+          </div>
+        </section>
+
+        <!-- 5. Changes to Terms -->
+        <section id="terms-changes" class="section-block">
+          <div class="section-header">
+            <span class="section-number">5</span>
+            <h2 class="section-title lang-en">Modifications to These Terms</h2>
+            <h2 class="section-title lang-hi" style="display:none;">शर्तों में संशोधन</h2>
+          </div>
+
+          <div class="lang-en">
+            <p>
+              We may revise these Terms of Service from time to time. Any updates will be reflected on this page with an updated "Last Updated" date. Continued usage of the application indicates acceptance of any revised terms.
+            </p>
+          </div>
+          <div class="lang-hi" style="display:none;">
+            <p>
+              हम समय-समय पर इन सेवा शर्तों को संशोधित कर सकते हैं। कोई भी बदलाव इसी पृष्ठ पर "Last Updated" तिथि के साथ दर्शाया जाएगा।
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ========================================================================
+       SITE FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="#intro" class="footer-link lang-en">Privacy Policy</a>
+        <a href="#intro" class="footer-link lang-hi" style="display:none;">गोपनीयता नीति</a>
+        <a href="#terms-acceptance" class="footer-link lang-en" onclick="document.querySelector('[data-tab=terms]').click()">Terms of Service</a>
+        <a href="#terms-acceptance" class="footer-link lang-hi" style="display:none;" onclick="document.querySelector('[data-tab=terms]').click()">सेवा की शर्तें</a>
+        <a href="#data-deletion" class="footer-link lang-en">Data Deletion</a>
+        <a href="#data-deletion" class="footer-link lang-hi" style="display:none;">डेटा विलोपन</a>
+        <a href="mailto:support@dohassist.com" class="footer-link">support@dohassist.com</a>
+      </div>
+      <p class="footer-copy">
+        © 2026 Samtawad (समतावाद). All Rights Reserved. Dedicated to Spiritual Enlightenment & Inner Peace.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating Quick Scroll to Top -->
+  <div class="floating-actions" aria-hidden="true">
+    <a href="#" class="fab" title="Scroll to Top" aria-label="Back to top">↑</a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
